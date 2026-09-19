@@ -52,6 +52,23 @@ navigation links and calendar entries all update automatically.
 - Rotating gold mandala, hand-drawn Ganesha, and the couple's PS crest
 - No phone numbers exposed — contact is via email + venue directions
 
+## Switching or reverting the hero photo
+
+Both hero crops are kept in the repo so you can swap back instantly:
+
+- `assets/generated/couple-hero.jpg` — the **current** hero photo
+- `assets/generated/couple-hero-previous.jpg` — the **previous** hero photo (fallback)
+
+To revert to the previous photo:
+
+```bash
+cd ~/pranshul-shilpee-wedding
+python3 scripts/set_hero.py assets/generated/couple-hero-previous.jpg
+git commit -am "Revert hero photo to previous image" && git push
+```
+
+To set any other picture (crop it to 780x851 first), pass its path to the same script.
+
 ## Pushing to GitHub
 
 ```bash
